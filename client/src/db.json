@@ -2,7 +2,7 @@
   "vehicles": [
     {
       "id": 1,
-      "category": "грузовое",
+      "category": "Грузовые",
       "driverName": "Иванов Иван",
       "driverPhoneNumber": "+79123456789",
       "location": {
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "category": "спецтранспорт",
+      "category": "Спецтранспорт",
       "driverName": "Петров Петр",
       "driverPhoneNumber": "+79123456780",
       "location": {
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "category": "легковое",
+      "category": "Легковые",
       "driverName": "Сидоров Алексей",
       "driverPhoneNumber": "+79123456781",
       "location": {
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "category": "грузовое",
+      "category": "Грузовые",
       "driverName": "Николаев Николай",
       "driverPhoneNumber": "+79123456782",
       "location": {
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "category": "легковое",
+      "category": "Легковые",
       "driverName": "Смирнова Елена",
       "driverPhoneNumber": "+79123456783",
       "location": {
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "category": "спецтранспорт",
+      "category": "Спецтранспорт",
       "driverName": "Кузнецов Дмитрий",
       "driverPhoneNumber": "+79123456784",
       "location": {
@@ -62,7 +62,7 @@
     },
     {
       "id": 7,
-      "category": "грузовое",
+      "category": "Грузовые",
       "driverName": "Васильев Андрей",
       "driverPhoneNumber": "+79123456785",
       "location": {
@@ -72,7 +72,7 @@
     },
     {
       "id": 8,
-      "category": "легковое",
+      "category": "Грузовые",
       "driverName": "Попова Мария",
       "driverPhoneNumber": "+79123456786",
       "location": {
@@ -82,7 +82,7 @@
     },
     {
       "id": 9,
-      "category": "грузовое",
+      "category": "Грузовые",
       "driverName": "Морозов Артем",
       "driverPhoneNumber": "+79123456787",
       "location": {
@@ -92,7 +92,7 @@
     },
     {
       "id": 10,
-      "category": "спецтранспорт",
+      "category": "Спецтранспорт",
       "driverName": "Федорова Ольга",
       "driverPhoneNumber": "+79123456788",
       "location": {

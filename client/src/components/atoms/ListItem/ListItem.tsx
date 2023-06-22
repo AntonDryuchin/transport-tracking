@@ -1,13 +1,13 @@
 import React from "react";
 import "./ListItem.css";
 
-type ListItemProps = {
+type IListItemProps = {
   id: number;
   category: string;
   driverName: string;
 };
 
-export default function ListItem(props: ListItemProps) {
+export default function ListItem(props: IListItemProps) {
   return (
     <div className="list-item">
       <p>TC#{props.id}</p>
