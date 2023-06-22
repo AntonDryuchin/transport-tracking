@@ -6,12 +6,14 @@ import Navbar from "./components/molecules/Navbar/Navbar";
 import List from "./components/molecules/List/List";
 import Transport from "./components/molecules/Transport/Transport";
 import Settings from "./components/molecules/Settings/Settings";
+import MainPage from "./components/pages/MainPage/MainPage";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<MainPage />} />
         <Route path="/list" element={<List />} />
         <Route path="/transport/:id" element={<Transport />} />
         <Route path="/settings" element={<Settings />} />
