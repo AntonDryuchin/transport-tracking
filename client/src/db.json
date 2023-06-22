@@ -1,0 +1,104 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "category": "грузовое",
+      "driverName": "Иванов Иван",
+      "driverPhoneNumber": "+79123456789",
+      "location": {
+        "latitude": 59.9343,
+        "longitude": 30.3351
+      }
+    },
+    {
+      "id": 2,
+      "category": "спецтранспорт",
+      "driverName": "Петров Петр",
+      "driverPhoneNumber": "+79123456780",
+      "location": {
+        "latitude": 59.945,
+        "longitude": 30.2642
+      }
+    },
+    {
+      "id": 3,
+      "category": "легковое",
+      "driverName": "Сидоров Алексей",
+      "driverPhoneNumber": "+79123456781",
+      "location": {
+        "latitude": 59.9111,
+        "longitude": 30.4769
+      }
+    },
+    {
+      "id": 4,
+      "category": "грузовое",
+      "driverName": "Николаев Николай",
+      "driverPhoneNumber": "+79123456782",
+      "location": {
+        "latitude": 59.9245,
+        "longitude": 30.3272
+      }
+    },
+    {
+      "id": 5,
+      "category": "легковое",
+      "driverName": "Смирнова Елена",
+      "driverPhoneNumber": "+79123456783",
+      "location": {
+        "latitude": 59.9393,
+        "longitude": 30.3159
+      }
+    },
+    {
+      "id": 6,
+      "category": "спецтранспорт",
+      "driverName": "Кузнецов Дмитрий",
+      "driverPhoneNumber": "+79123456784",
+      "location": {
+        "latitude": 59.917,
+        "longitude": 30.3285
+      }
+    },
+    {
+      "id": 7,
+      "category": "грузовое",
+      "driverName": "Васильев Андрей",
+      "driverPhoneNumber": "+79123456785",
+      "location": {
+        "latitude": 59.9084,
+        "longitude": 30.3168
+      }
+    },
+    {
+      "id": 8,
+      "category": "легковое",
+      "driverName": "Попова Мария",
+      "driverPhoneNumber": "+79123456786",
+      "location": {
+        "latitude": 59.9229,
+        "longitude": 30.354
+      }
+    },
+    {
+      "id": 9,
+      "category": "грузовое",
+      "driverName": "Морозов Артем",
+      "driverPhoneNumber": "+79123456787",
+      "location": {
+        "latitude": 59.9421,
+        "longitude": 30.3236
+      }
+    },
+    {
+      "id": 10,
+      "category": "спецтранспорт",
+      "driverName": "Федорова Ольга",
+      "driverPhoneNumber": "+79123456788",
+      "location": {
+        "latitude": 59.9423,
+        "longitude": 30.3236
+      }
+    }
+  ]
+}
