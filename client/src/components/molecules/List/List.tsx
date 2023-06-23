@@ -12,6 +12,8 @@ export default function List() {
   const [list, setList] = useState(transportData.vehicles);
   const [filters, setFilters] = useState(initialState);
 
+  //   console.log("list: ", list);
+
   const categories = transportData.vehicles
     .map((item) => item.category)
     .filter((value, index, array) => {
@@ -73,7 +75,7 @@ export default function List() {
           ))}
         </div>
       ) : (
-        <Map {...list} />
+        <Map list={list} />
       )}
     </>
   );
