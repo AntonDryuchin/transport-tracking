@@ -13,15 +13,31 @@ interface MapProps {
   }[];
 }
 
-const Map: React.FC<MapProps> = ({ list }) => {
+export default function Map({ list }: MapProps) {
+  //   console.log(list);
   useEffect(() => {
     const initMap = () => {
       const map = new window.google.maps.Map(document.getElementById("map")!, {
-        center: { lat: 59.93139, lng: 30.36019 }, // Координаты станции метро Александра Невского 1
+        center: { lat: 59.93139, lng: 30.36019 },
         zoom: 11,
       });
 
       list.forEach((item) => {
+        let icon;
+        switch (item.category) {
+          case "Легковые":
+            icon = "/icons/car-icon.svg";
+            break;
+          case "Грузовые":
+            icon = "/icons/truck-icon.svg";
+            break;
+          case "Спецтранспорт":
+            icon = "/icons/excavator-icon.svg";
+            break;
+          default:
+            icon = "";
+        }
+
         const marker = new window.google.maps.Marker({
           position: {
             lat: item.location.latitude,
@@ -29,6 +45,10 @@ const Map: React.FC<MapProps> = ({ list }) => {
           },
           map,
           title: item.driverName,
+          icon: {
+            url: icon,
+            scaledSize: new window.google.maps.Size(20, 20),
+          },
         });
       });
     };
@@ -50,6 +70,4 @@ const Map: React.FC<MapProps> = ({ list }) => {
   }, [list]);
 
   return <div id="map" style={{ height: "400px" }} />;
-};
-
-export default Map;
+}
