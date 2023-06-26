@@ -9,7 +9,6 @@ export default function Transport() {
   const lang = useContext(LangContext);
   const id = Number(useParams().id);
   const list = transportData.vehicles.filter((vehicle) => vehicle.id === id);
-  // console.log(list);
 
   const handleCall = () => {
     const url = `tel:${list[0].driverPhoneNumber}`;

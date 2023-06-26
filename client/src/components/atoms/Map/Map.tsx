@@ -1,18 +1,6 @@
 import React, { useEffect } from "react";
 import "./Map.css";
-
-interface MapProps {
-  list: {
-    id: number;
-    category: string;
-    driverName: string;
-    driverPhoneNumber: string;
-    location: {
-      latitude: number;
-      longitude: number;
-    };
-  }[];
-}
+import { MapProps } from "../../../types";
 
 export default function Map({ list }: MapProps) {
   //   console.log(list);

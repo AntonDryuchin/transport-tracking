@@ -4,24 +4,7 @@ import transportData from "../../../db.json";
 import ListItem from "../../atoms/ListItem/ListItem";
 import Map from "../../atoms/Map/Map";
 import { LangContext } from "../../../context/LangContext";
-
-interface Location {
-  latitude: number;
-  longitude: number;
-}
-
-interface Vehicle {
-  id: number;
-  category: string;
-  driverName: string;
-  driverPhoneNumber: string;
-  location: Location;
-}
-
-interface Filters {
-  categories: string;
-  view: string;
-}
+import { Filters, Vehicle } from "../../../types";
 
 const initialState: Filters = {
   categories: "All",
@@ -34,8 +17,6 @@ export default function List() {
   const [list, setList] = useState<Vehicle[]>(transportData.vehicles);
   const [filters, setFilters] = useState<Filters>(initialState);
   const [tempView, setTempView] = useState<string>(filters.view);
-
-  //   console.log(list);
 
   const categories = transportData.vehicles
     .map((item) => item.category)

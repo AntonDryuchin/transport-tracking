@@ -1,12 +1,7 @@
 import React from "react";
 import "./ListItem.css";
 import { useNavigate } from "react-router-dom";
-
-export type IListItemProps = {
-  id: number;
-  category: string;
-  driverName: string;
-};
+import { IListItemProps } from "../../../types";
 
 export default function ListItem(props: IListItemProps) {
   const navigate = useNavigate();
