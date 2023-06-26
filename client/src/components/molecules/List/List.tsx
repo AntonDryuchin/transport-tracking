@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, useContext } from "react";
+import "./List.css";
 import transportData from "../../../db.json";
 import ListItem from "../../atoms/ListItem/ListItem";
 import Map from "../../atoms/Map/Map";
@@ -65,43 +66,48 @@ export default function List() {
   };
 
   return (
-    <>
-      <label>
-        {lang.lang === "en" ? "Filter by category: " : "Фильтр по категории: "}
-        <select
-          name="categories"
-          defaultValue="All"
-          onChange={handleFilterChange}
-        >
-          <option value="All">
-            {lang.lang === "en" ? "All categories" : "Все категории"}
-          </option>
-          {categories.map((category: string) => (
-            <option key={category} value={category}>
-              {category}
+    <div className="main-container">
+      <h3>
+        {lang.lang === "en" ? "Transport tracking" : "Отслеживание транспорта"}
+      </h3>
+      <div className="filter-container">
+        <label>
+          {lang.lang === "en" ? "Category: " : "Категории: "}
+          <select
+            name="categories"
+            defaultValue="All"
+            onChange={handleFilterChange}
+          >
+            <option value="All">
+              {lang.lang === "en" ? "All categories" : "Все категории"}
             </option>
-          ))}
-        </select>
-      </label>
+            {categories.map((category: string) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
 
-      <label>
-        {lang.lang === "en" ? "View: " : "Вид: "}
-        <select name="view" value={tempView} onChange={handleFilterChange}>
-          <option key="1" value="List">
-            {lang.lang === "en" ? "List" : "Списком"}
-          </option>
-          <option key="2" value="Map">
-            {lang.lang === "en" ? "Map" : "На карте"}
-          </option>
-        </select>
-      </label>
+        <label>
+          {lang.lang === "en" ? "View: " : "Вид: "}
+          <select name="view" value={tempView} onChange={handleFilterChange}>
+            <option key="1" value="List">
+              {lang.lang === "en" ? "List" : "Списком"}
+            </option>
+            <option key="2" value="Map">
+              {lang.lang === "en" ? "Map" : "На карте"}
+            </option>
+          </select>
+        </label>
 
-      <button onClick={handleFilterApply}>
-        {lang.lang === "en" ? "Apply" : "Применить"}
-      </button>
+        <button onClick={handleFilterApply}>
+          {lang.lang === "en" ? "Apply" : "Применить"}
+        </button>
+      </div>
 
       {filters.view === "List" && (
-        <div className="list">
+        <div className="list-container">
           {list.map((item: Vehicle) => (
             <ListItem
               key={item.id}
@@ -114,6 +120,6 @@ export default function List() {
       )}
 
       {filters.view === "Map" && <Map list={list} />}
-    </>
+    </div>
   );
 }

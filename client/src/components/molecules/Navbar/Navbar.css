@@ -1,0 +1,33 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(rgb(195, 195, 195), rgb(216, 216, 216));
+  height: 50px;
+  padding-left: 20px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar-link {
+  margin: 5px;
+
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+.navbar-link li {
+  padding: 7px;
+}
+
+.navbar-link:hover {
+  background-color: rgb(186, 186, 186);
+}

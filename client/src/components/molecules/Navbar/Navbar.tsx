@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { LangContext } from "../../../context/LangContext";
 
@@ -7,11 +8,11 @@ export default function Navbar() {
   return (
     <div className="nav">
       <ul>
-        <Link to="/">
+        <Link className="navbar-link" to="/">
           <li>{lang.lang === "en" ? "Main" : "Главная"}</li>
         </Link>
 
-        <Link to="/settings">
+        <Link className="navbar-link" to="/settings">
           <li>{lang.lang === "en" ? "Settings" : "Настройки"}</li>
         </Link>
       </ul>
