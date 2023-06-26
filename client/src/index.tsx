@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
+    {/* <Provider></Provider> */}
     <App />
   </BrowserRouter>
   //  </React.StrictMode>

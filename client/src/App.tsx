@@ -1,24 +1,29 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/molecules/Navbar/Navbar";
-import List from "./components/molecules/List/List";
-import Transport from "./components/molecules/Transport/Transport";
-import Settings from "./components/molecules/Settings/Settings";
+import Transport from "./components/atoms/Transport/Transport";
 import MainPage from "./components/pages/MainPage/MainPage";
+import { LangContext } from "./context/LangContext";
+import SettingsPage from "./components/pages/SettingsPage/SettingsPage";
 
 function App() {
+  const [lang, setLang] = useState("ru");
+
+  const langContextValue = {
+    lang,
+    setLang,
+  };
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/transport/:id" element={<Transport />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
-      <div>111</div>
+      <LangContext.Provider value={langContextValue}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/transport/:id" element={<Transport />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Routes>
+      </LangContext.Provider>
     </div>
   );
 }

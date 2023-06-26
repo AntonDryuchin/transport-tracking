@@ -69,5 +69,5 @@ export default function Map({ list }: MapProps) {
     }
   }, [list]);
 
-  return <div id="map" style={{ height: "400px" }} />;
+  return <div id="map" style={{ height: "400px", width: "600px" }} />;
 }
