@@ -6,15 +6,22 @@ import Map from "../Map/Map";
 import { LangContext } from "../../../context/LangContext";
 
 export default function Transport() {
+  //получение настроек языка из контекста
   const lang = useContext(LangContext);
+
+  //получение ID ТС из адресной строки
   const id = Number(useParams().id);
+
+  //формирование массива ТС из одного элемента (логика карты работает только с массивами)
   const list = transportData.vehicles.filter((vehicle) => vehicle.id === id);
 
+  //обработчик клика по кнопке звонка водителю
   const handleCall = () => {
     const url = `tel:${list[0].driverPhoneNumber}`;
     window.open(url, "_blank");
   };
 
+  //обработчик клика по кнопке сообщения водителю
   const handleSendMessage = () => {
     let message;
     if (lang.lang === "en") {

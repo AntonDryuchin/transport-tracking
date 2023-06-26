@@ -3,8 +3,10 @@ import { LangContext } from "../../../context/LangContext";
 import "./LangSelector.css";
 
 export default function LangSelector() {
+  //получение настроек языка из контекста
   const { lang, setLang } = useContext(LangContext);
 
+  //обработчик выбора языка
   const handleLangChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLang(event.target.value);
   };

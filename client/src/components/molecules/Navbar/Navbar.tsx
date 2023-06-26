@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { LangContext } from "../../../context/LangContext";
 
 export default function Navbar() {
+  // получение из контекста значения настроек языка
   const lang = useContext(LangContext);
+
   return (
     <div className="nav">
       <ul>

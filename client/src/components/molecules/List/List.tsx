@@ -12,18 +12,21 @@ const initialState: Filters = {
 };
 
 export default function List() {
+  // получение из контекста значения настроек языка
   const lang = useContext(LangContext);
 
-  const [list, setList] = useState<Vehicle[]>(transportData.vehicles);
-  const [filters, setFilters] = useState<Filters>(initialState);
-  const [tempView, setTempView] = useState<string>(filters.view);
+  const [list, setList] = useState<Vehicle[]>(transportData.vehicles); //список транспортных стредств загружается из db.json
+  const [filters, setFilters] = useState<Filters>(initialState); //фильтры для отображения
+  const [tempView, setTempView] = useState<string>(filters.view); // временная настройка режима отображения карты до нажатия кнопки "ПРИМЕНИТЬ"
 
+  //преобразование массива ТС в массив строк, уникальных категорий ТС (для выпадающего списка)
   const categories = transportData.vehicles
     .map((item) => item.category)
     .filter((value, index, array) => {
       return array.indexOf(value) === index;
     });
 
+  //смена режима отображения и фильтров категорий
   const handleFilterChange = (event: ChangeEvent<HTMLSelectElement>) => {
     if (event.target.name === "view") {
       setTempView(event.target.value);
@@ -32,6 +35,7 @@ export default function List() {
     }
   };
 
+  //обработчик клика кнопки "ПРИМЕНИТЬ", устанавливает выбор режима КАРТА-СПИСОК и фильтрует исходные данные по категории
   const handleFilterApply = () => {
     setFilters({ ...filters, view: tempView });
     if (filters.categories === "All") {
