@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import "./Transport.css";
 import transportData from "../../../db.json";
 import { useParams } from "react-router-dom";
-import Map from "../Map/Map";
 import { LangContext } from "../../../context/LangContext";
+import YMap from "../YMap/YMap";
 
 export default function Transport() {
   //получение настроек языка из контекста
@@ -39,7 +39,7 @@ export default function Transport() {
   return (
     <div className="transport-container">
       <h3>{lang.lang === "en" ? `Vehicle #${id}` : `Транспорт #${id}`}</h3>
-      <Map list={list} />
+      <YMap list={list} mode="One" />
       <div className="transport-info">
         <p>
           {lang.lang === "en" ? "Category: " : "Категория: "}

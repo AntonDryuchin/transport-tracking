@@ -2,9 +2,9 @@ import React, { useState, ChangeEvent, useContext } from "react";
 import "./List.css";
 import transportData from "../../../db.json";
 import ListItem from "../../atoms/ListItem/ListItem";
-import Map from "../../atoms/Map/Map";
 import { LangContext } from "../../../context/LangContext";
 import { Filters, Vehicle } from "../../../types";
+import YMap from "../../atoms/YMap/YMap";
 
 const initialState: Filters = {
   categories: "All",
@@ -104,7 +104,7 @@ export default function List() {
         </div>
       )}
 
-      {filters.view === "Map" && <Map list={list} />}
+      {filters.view === "Map" && <YMap list={list} mode="All" />}
     </div>
   );
 }

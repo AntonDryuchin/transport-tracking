@@ -6,8 +6,8 @@
       "driverName": "Иванов Иван",
       "driverPhoneNumber": "+79123456789",
       "location": {
-        "latitude": 59.9343,
-        "longitude": 30.3351
+        "latitude": 59.9321,
+        "longitude": 30.3609
       }
     },
     {
@@ -16,8 +16,8 @@
       "driverName": "Петров Петр",
       "driverPhoneNumber": "+79123456780",
       "location": {
-        "latitude": 59.945,
-        "longitude": 30.2642
+        "latitude": 59.9415,
+        "longitude": 30.2934
       }
     },
     {
@@ -26,8 +26,8 @@
       "driverName": "Сидоров Алексей",
       "driverPhoneNumber": "+79123456781",
       "location": {
-        "latitude": 59.9111,
-        "longitude": 30.4769
+        "latitude": 59.939,
+        "longitude": 30.3882
       }
     },
     {
@@ -36,8 +36,8 @@
       "driverName": "Николаев Николай",
       "driverPhoneNumber": "+79123456782",
       "location": {
-        "latitude": 59.9245,
-        "longitude": 30.3272
+        "latitude": 59.9347,
+        "longitude": 30.3131
       }
     },
     {
@@ -46,8 +46,8 @@
       "driverName": "Смирнова Елена",
       "driverPhoneNumber": "+79123456783",
       "location": {
-        "latitude": 59.9393,
-        "longitude": 30.3159
+        "latitude": 59.9372,
+        "longitude": 30.3296
       }
     },
     {
@@ -56,8 +56,8 @@
       "driverName": "Кузнецов Дмитрий",
       "driverPhoneNumber": "+79123456784",
       "location": {
-        "latitude": 59.917,
-        "longitude": 30.3285
+        "latitude": 59.9318,
+        "longitude": 30.3138
       }
     },
     {
@@ -66,8 +66,8 @@
       "driverName": "Васильев Андрей",
       "driverPhoneNumber": "+79123456785",
       "location": {
-        "latitude": 59.9084,
-        "longitude": 30.3168
+        "latitude": 59.9302,
+        "longitude": 30.3345
       }
     },
     {
@@ -76,8 +76,8 @@
       "driverName": "Попова Мария",
       "driverPhoneNumber": "+79123456786",
       "location": {
-        "latitude": 59.9229,
-        "longitude": 30.354
+        "latitude": 59.9336,
+        "longitude": 30.3602
       }
     },
     {
@@ -86,8 +86,8 @@
       "driverName": "Морозов Артем",
       "driverPhoneNumber": "+79123456787",
       "location": {
-        "latitude": 59.9421,
-        "longitude": 30.3236
+        "latitude": 59.9325,
+        "longitude": 30.3369
       }
     },
     {
@@ -96,8 +96,8 @@
       "driverName": "Федорова Ольга",
       "driverPhoneNumber": "+79123456788",
       "location": {
-        "latitude": 59.9423,
-        "longitude": 30.3236
+        "latitude": 59.9295,
+        "longitude": 30.3403
       }
     }
   ]

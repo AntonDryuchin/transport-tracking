@@ -15,6 +15,7 @@ export type MapProps = {
       longitude: number;
     };
   }[];
+  mode: string;
 };
 
 export interface Location {
@@ -34,3 +35,10 @@ export interface Filters {
   categories: string;
   view: string;
 }
+
+export type ICons = {
+  [key: string]: string;
+  Легковые: string;
+  Грузовые: string;
+  Спецтранспорт: string;
+};
