@@ -5,10 +5,23 @@ import ListItem from "../../atoms/ListItem/ListItem";
 import { LangContext } from "../../../context/LangContext";
 import { Filters, Vehicle } from "../../../types";
 import YMap from "../../atoms/YMap/YMap";
+import VehicleInfo from "../../atoms/VehicleInfo/VehicleInfo";
+// import VehicleInfo from "../../atoms/VehicleInfo/VehicleInfo";
 
 const initialState: Filters = {
   categories: "All",
   view: "List",
+};
+
+const obj: Vehicle = {
+  id: 0,
+  category: "",
+  driverName: "",
+  driverPhoneNumber: "",
+  location: {
+    latitude: 0,
+    longitude: 0,
+  },
 };
 
 export default function List() {
@@ -18,13 +31,8 @@ export default function List() {
   const [list, setList] = useState<Vehicle[]>(transportData.vehicles); //список транспортных стредств загружается из db.json
   const [filters, setFilters] = useState<Filters>(initialState); //фильтры для отображения
   const [tempView, setTempView] = useState<string>(filters.view); // временная настройка режима отображения карты до нажатия кнопки "ПРИМЕНИТЬ"
-
-  //преобразование массива ТС в массив строк, уникальных категорий ТС (для выпадающего списка)
-  const categories = transportData.vehicles
-    .map((item) => item.category)
-    .filter((value, index, array) => {
-      return array.indexOf(value) === index;
-    });
+  const [vehicleInfo, setVehicleInfo] = useState<Vehicle>(obj);
+  // const [showVehicleInfo, setShowVehicleInfo] = useState(false);
 
   //смена режима отображения и фильтров категорий
   const handleFilterChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -43,7 +51,7 @@ export default function List() {
     } else {
       setList(
         transportData.vehicles.filter(
-          (item) =>
+          (item: Vehicle) =>
             filters.categories === "All" || item.category === filters.categories
         )
       );
@@ -108,7 +116,12 @@ export default function List() {
         </div>
       )}
 
-      {filters.view === "Map" && <YMap list={list} mode="All" />}
+      {filters.view === "Map" && (
+        <>
+          <YMap list={list} setVehicleInfo={setVehicleInfo} mode="All" />
+          <VehicleInfo {...vehicleInfo} />
+        </>
+      )}
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
+import "./VehicleInfo.css";
 import { LangContext } from "../../../context/LangContext";
 import { Vehicle } from "../../../types";
 
 export default function VehicleInfo(vehicle: Vehicle) {
   //получение настроек языка из контекста
   const lang = useContext(LangContext);
-
   //обработчик клика по кнопке звонка водителю
   const handleCall = () => {
-    const url = `tel:${vehicle.driverPhoneNumber}`;
+    const url = `tel:${vehicle?.driverPhoneNumber}`;
     window.open(url, "_blank");
   };
 
@@ -22,34 +22,42 @@ export default function VehicleInfo(vehicle: Vehicle) {
       message =
         "Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе";
     }
-    const phoneNumber = vehicle.driverPhoneNumber;
+    const phoneNumber = vehicle?.driverPhoneNumber;
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
     window.open(url, "_blank");
   };
   return (
-    <>
-      <div className="transport-info">
+    <div className="vehicle-info-container">
+      <div className="vehicle-info">
         <p>
           {lang.lang === "en" ? "Category: " : "Категория: "}
-          {vehicle.category}
+          {vehicle?.category}
         </p>
         <p>
           {lang.lang === "en" ? "Driver's name: " : "Имя водителя: "}
-          {vehicle.driverName}
+          {vehicle?.driverName}
         </p>
         <p>
           {lang.lang === "en" ? "Phone: " : "Телефон: "}
-          {vehicle.driverPhoneNumber}
+          {vehicle?.driverPhoneNumber}
         </p>
       </div>
       <div className="button-container">
-        <button onClick={handleCall}>
+        <button
+          className="info-btn"
+          onClick={handleCall}
+          disabled={vehicle.id === 0 ? true : false}
+        >
           {lang.lang === "en" ? "Call" : "Позвонить"}
         </button>
-        <button onClick={handleSendMessage}>
+        <button
+          className="info-btn"
+          onClick={handleSendMessage}
+          disabled={vehicle.id === 0 ? true : false}
+        >
           {lang.lang === "en" ? "Message" : "Написать"}
         </button>
       </div>
-    </>
+    </div>
   );
 }

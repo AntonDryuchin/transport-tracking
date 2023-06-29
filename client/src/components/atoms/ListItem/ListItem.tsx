@@ -1,9 +1,9 @@
 import React from "react";
 import "./ListItem.css";
 import { useNavigate } from "react-router-dom";
-import { IListItemProps } from "../../../types";
+import { ListItemProps } from "../../../types";
 
-export default function ListItem(props: IListItemProps) {
+export default function ListItem(props: ListItemProps) {
   const navigate = useNavigate();
 
   return (
@@ -11,9 +11,9 @@ export default function ListItem(props: IListItemProps) {
       className="list-item"
       onClick={() => navigate(`/transport/${props.id}`)}
     >
-      <p>TC#{props.id}</p>
-      <p>{props.driverName}</p>
-      <p>{props.category}</p>
+      <span>TC#{props.id}</span>
+      <span>{props.driverName}</span>
+      <span>{props.category}</span>
     </div>
   );
 }

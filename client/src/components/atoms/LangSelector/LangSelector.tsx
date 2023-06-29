@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { LangContext } from "../../../context/LangContext";
 import "./LangSelector.css";
-import YMap from "../YMap/YMap";
 
 export default function LangSelector() {
   //получение настроек языка из контекста

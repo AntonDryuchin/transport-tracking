@@ -1,4 +1,6 @@
-export type IListItemProps = {
+import { Dispatch, SetStateAction } from "react";
+
+export type ListItemProps = {
   id: number;
   category: string;
   driverName: string;
@@ -6,6 +8,7 @@ export type IListItemProps = {
 
 export type MapProps = {
   list: Vehicle[];
+  setVehicleInfo?: Dispatch<SetStateAction<Vehicle>>;
   mode: string;
 };
 
