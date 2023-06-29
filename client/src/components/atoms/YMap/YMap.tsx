@@ -1,9 +1,10 @@
-import React from "react";
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import React, { useState } from "react";
+import { YMaps, Map, Placemark, ZoomControl } from "@pbe/react-yandex-maps";
 import carIcon from "../../../icons/car-icon.svg";
 import truckIcon from "../../../icons/truck-icon.svg";
 import excavatorIcon from "../../../icons/excavator-icon.svg";
-import { ICons, MapProps } from "../../../types";
+import { ICons, MapProps, Vehicle } from "../../../types";
+import ymaps from "yandex-maps";
 
 export default function YMap({ list, mode }: MapProps) {
   console.log("Map mode: ", mode);
@@ -24,6 +25,8 @@ export default function YMap({ list, mode }: MapProps) {
     Спецтранспорт: excavatorIcon,
   };
 
+  const [info, setInfo] = useState({});
+
   return (
     <YMaps>
       <Map
@@ -35,7 +38,7 @@ export default function YMap({ list, mode }: MapProps) {
           margin: "10px 0",
         }}
       >
-        {list.map((item) => (
+        {list.map((item: Vehicle) => (
           <Placemark
             geometry={[item.location.latitude, item.location.longitude]}
             options={{
@@ -45,8 +48,15 @@ export default function YMap({ list, mode }: MapProps) {
               iconImageOffset: [-5, -5],
             }}
             key={item.id}
+            onClick={() => {
+              setInfo(item);
+            }}
+            properties={{
+              balloonContent: item.driverName,
+            }}
           />
         ))}
+        <ZoomControl options={{ position: { top: 10, right: 10 } }} />
       </Map>
     </YMaps>
   );

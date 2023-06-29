@@ -66,11 +66,15 @@ export default function List() {
             <option value="All">
               {lang.lang === "en" ? "All categories" : "Все категории"}
             </option>
-            {categories.map((category: string) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
+            <option key="0" value="Легковые">
+              {lang.lang === "en" ? "Cars" : "Легковые"}
+            </option>
+            <option key="1" value="Грузовые">
+              {lang.lang === "en" ? "Trucks" : "Грузовые"}
+            </option>
+            <option key="2" value="Спецтранспорт">
+              {lang.lang === "en" ? "Special vehicles" : "Спецтранспорт"}
+            </option>
           </select>
         </label>
 

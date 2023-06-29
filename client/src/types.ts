@@ -5,16 +5,7 @@ export type IListItemProps = {
 };
 
 export type MapProps = {
-  list: {
-    id: number;
-    category: string;
-    driverName: string;
-    driverPhoneNumber: string;
-    location: {
-      latitude: number;
-      longitude: number;
-    };
-  }[];
+  list: Vehicle[];
   mode: string;
 };
 
